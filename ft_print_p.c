@@ -6,7 +6,7 @@
 /*   By: hde-andr <hde-andr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 21:12:06 by hde-andr          #+#    #+#             */
-/*   Updated: 2025/10/28 12:45:28 by hde-andr         ###   ########.fr       */
+/*   Updated: 2025/10/28 17:48:22 by hde-andr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 int	print_p(void *arg)
 {
-	char *p;
+	char	*p;
 
-	p = *arg;
+	p = arg;
 	return (print_s(p));
 }
-int main()
+/* int main()
 {
 	char *arg = "lalallaa";
-	/* printf("%s\n", arg);
+	printf("%s\n", arg);
 	printf("%s\n", &arg);
-	printf("%s\n", *arg); */
+	printf("%s\n", *arg);
 	print_p(arg);
-}
+} */

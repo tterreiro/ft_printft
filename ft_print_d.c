@@ -6,15 +6,15 @@
 /*   By: hde-andr <hde-andr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 21:12:02 by hde-andr          #+#    #+#             */
-/*   Updated: 2025/10/28 11:40:42 by hde-andr         ###   ########.fr       */
+/*   Updated: 2025/10/28 18:44:47 by hde-andr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_d(int	arg)
+int	print_d(int arg)
 {
-	int	count;
+	int			count;
 	long int	nbr;
 
 	count = 0;

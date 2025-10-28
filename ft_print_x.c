@@ -6,59 +6,52 @@
 /*   By: hde-andr <hde-andr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 21:12:11 by hde-andr          #+#    #+#             */
-/*   Updated: 2025/10/28 16:37:15 by hde-andr         ###   ########.fr       */
+/*   Updated: 2025/10/28 21:50:40 by hde-andr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*convert_base(int arg, char *base, int size)
+int	print_low(int arg)
 {
-	long int	nbr;
-	char		*tmp;
+	int				count;
+	unsigned int	nbr;
+	char			*base;
 
-	nbr = (long int)arg;
-	tmp = malloc(sizeof(char) * (size + 1));
-	tmp[size] = '\0';
-	if (nbr < 0)
-	{
-		nbr *= -1;
-	}
-	while (size > 0)
-	{
-		size--;
-		tmp[size] = base[nbr % 16];
-		nbr /= 16;
-	}
-	return(tmp);
-}
-int	print_x(int	arg)
-{
-	int			count;
-	long int	nbr;
-	char		*str;
-	char		*base;
-
-	nbr = (long int)arg;
 	count = 0;
+	nbr = (unsigned int)arg;
 	base = "0123456789abcdef";
-	if (nbr < 0)
+	if (nbr >= 16)
 	{
-		nbr *= -1;
-		count++;
+		count += print_low(nbr / 16);
 	}
-	while (nbr > 0)
-	{
-		nbr /= 16;
-		count++;
-	}
-	str = convert_base(arg, base, count);
-	ft_putstr(str);
+	ft_putchar(base[nbr % 16]);
+	count++;
 	return (count);
 }
+
+int	print_up(int arg)
+{
+	int				count;
+	unsigned int	nbr;
+	char			*base;
+
+	count = 0;
+	nbr = (unsigned int)arg;
+	base = "0123456789ABCDEF";
+	if (nbr >= 16)
+	{
+		count += print_up(nbr / 16);
+	}
+	ft_putchar(base[nbr % 16]);
+	count++;
+	return (count);
+}
+
 /* int	main()
 {
-	int	nbr = 123;
-	print_x(nbr);
-	printf("\n%x", nbr);
+	unsigned int	nbr = 0;
+	print_low(nbr);
+	printf("\n%x\n", nbr);
+	printf("\n%i", print_up(nbr));
 } */

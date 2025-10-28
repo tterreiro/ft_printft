@@ -6,11 +6,11 @@
 /*   By: hde-andr <hde-andr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 18:56:19 by hde-andr          #+#    #+#             */
-/*   Updated: 2025/10/28 10:59:53 by hde-andr         ###   ########.fr       */
+/*   Updated: 2025/10/28 17:46:36 by hde-andr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+/* #include "ft_printf.h"
 
 void	test(char *str, ...)
 {
@@ -29,4 +29,4 @@ int	main(void)
 	int nm = 23;
 	test("skibidi toilet", arg, nm, args);
 	printf("%u", -1);
-}
+} */

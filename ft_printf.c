@@ -6,7 +6,7 @@
 /*   By: hde-andr <hde-andr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:40:20 by hde-andr          #+#    #+#             */
-/*   Updated: 2025/10/28 10:29:00 by hde-andr         ###   ########.fr       */
+/*   Updated: 2025/10/28 18:43:57 by hde-andr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,23 @@
 int	check_format(va_list args, const char *str, int i)
 {
 	if (str[i] == 'c')
-		return(print_c(va_arg(args, int)));
+		return (print_c(va_arg(args, int)));
 	else if (str[i] == 's')
-		return(print_s(va_arg(args, char *)));
+		return (print_s(va_arg(args, char *)));
 	else if (str[i] == 'p')
-		return(print_p(va_arg(args, void *)));
+		return (print_p(va_arg(args, void *)));
 	else if (str[i] == 'd')
-		return(print_d(va_arg(args, int)));
+		return (print_d(va_arg(args, int)));
 	else if (str[i] == 'i')
-		return(print_d(va_arg(args, int)));
+		return (print_d(va_arg(args, int)));
 	else if (str[i] == 'u')
-		return(print_u(va_arg(args, unsigned int)));
+		return (print_u(va_arg(args, unsigned int)));
 	else if (str[i] == 'x')
-		return(print_x(va_arg(args, int)));
+		return (print_low(va_arg(args, int)));
 	else if (str[i] == 'X')
-		return(print_X(va_arg(args, int)));
+		return (print_up(va_arg(args, int)));
 	else if (str[i] == '%')
-		return(print_c('%'));
+		return (print_c('%'));
 }
 
 int	ft_printf(const char *str, ...)

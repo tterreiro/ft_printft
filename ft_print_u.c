@@ -6,7 +6,7 @@
 /*   By: hde-andr <hde-andr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 21:12:13 by hde-andr          #+#    #+#             */
-/*   Updated: 2025/10/28 11:55:43 by hde-andr         ###   ########.fr       */
+/*   Updated: 2025/10/28 18:44:36 by hde-andr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	print_u(unsigned int arg)
 {
-	int	count;
+	int			count;
 	long int	nbr;
 
 	count = 0;

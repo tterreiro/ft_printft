@@ -6,13 +6,14 @@
 #    By: hde-andr <hde-andr@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/13 13:17:36 by hde-andr          #+#    #+#              #
-#    Updated: 2025/10/27 21:19:20 by hde-andr         ###   ########.fr        #
+#    Updated: 2025/10/28 22:49:53 by hde-andr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRCS = 
+SRCS = ft_printf.c ft_print_c.c ft_print_x.c ft_print_d.c \
+		ft_print_u.c ft_print_s.c ft_print_p.c
 
 OBJS = $(SRCS:.c=.o)
 

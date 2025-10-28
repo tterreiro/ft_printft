@@ -6,7 +6,7 @@
 /*   By: hde-andr <hde-andr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:30:52 by hde-andr          #+#    #+#             */
-/*   Updated: 2025/10/28 11:51:08 by hde-andr         ###   ########.fr       */
+/*   Updated: 2025/10/28 17:47:32 by hde-andr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_printf(const char *format, ...);
 int		print_c(int arg);
 int		print_p(void *arg);
 int		print_s(char *arg);
-int		print_d(int	arg);
+int		print_d(int arg);
 
 
 #endif
