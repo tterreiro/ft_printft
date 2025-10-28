@@ -6,7 +6,7 @@
 /*   By: hde-andr <hde-andr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:40:20 by hde-andr          #+#    #+#             */
-/*   Updated: 2025/10/27 21:00:46 by hde-andr         ###   ########.fr       */
+/*   Updated: 2025/10/28 10:29:00 by hde-andr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,24 @@
 
 int	check_format(va_list args, const char *str, int i)
 {
-	int	count;
-
-	count = 0;
 	if (str[i] == 'c')
-		count += ft_print_c(va_arg(args, int), count);
+		return(print_c(va_arg(args, int)));
 	else if (str[i] == 's')
-		count += ft_print_s(va_arg(args, char *), count);
+		return(print_s(va_arg(args, char *)));
 	else if (str[i] == 'p')
-		count += ft_print_p(va_arg(args, void *), count);
+		return(print_p(va_arg(args, void *)));
 	else if (str[i] == 'd')
-		count += ft_print_d(va_arg(args, int), count);
+		return(print_d(va_arg(args, int)));
 	else if (str[i] == 'i')
-		count += ft_print_d(va_arg(args, int), count);
+		return(print_d(va_arg(args, int)));
 	else if (str[i] == 'u')
-		count += ft_print_u(va_arg(args, unsigned int), count);
+		return(print_u(va_arg(args, unsigned int)));
 	else if (str[i] == 'x')
-		count += ft_print_x(va_arg(args, int), count);
+		return(print_x(va_arg(args, int)));
 	else if (str[i] == 'X')
-		count += ft_print_X(va_arg(args, int), count);
+		return(print_X(va_arg(args, int)));
 	else if (str[i] == '%')
-		count += ft_print_c('%', count);
-	return (count);
+		return(print_c('%'));
 }
 
 int	ft_printf(const char *str, ...)
