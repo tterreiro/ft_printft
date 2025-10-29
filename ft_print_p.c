@@ -6,24 +6,22 @@
 /*   By: hde-andr <hde-andr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 21:12:06 by hde-andr          #+#    #+#             */
-/*   Updated: 2025/10/28 17:48:22 by hde-andr         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:41:29 by hde-andr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	print_p(void *arg)
+int	print_p(unsigned long arg)
 {
-	char	*p;
-
-	p = arg;
-	return (print_s(p));
+	ft_putstr("0x");
+	return (print_low(arg) + 2);
 }
+
 /* int main()
 {
-	char *arg = "lalallaa";
-	printf("%s\n", arg);
-	printf("%s\n", &arg);
-	printf("%s\n", *arg);
-	print_p(arg);
+	char	*arg = "djsesjnde";
+
+	printf("%p\n", arg);
+	print_p((unsigned long)arg);
 } */

@@ -6,65 +6,64 @@
 /*   By: hde-andr <hde-andr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:40:20 by hde-andr          #+#    #+#             */
-/*   Updated: 2025/10/28 18:43:57 by hde-andr         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:32:36 by hde-andr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	check_format(va_list args, const char *str, int i)
+int	check_format(va_list *args, const char str)
 {
-	if (str[i] == 'c')
-		return (print_c(va_arg(args, int)));
-	else if (str[i] == 's')
-		return (print_s(va_arg(args, char *)));
-	else if (str[i] == 'p')
-		return (print_p(va_arg(args, void *)));
-	else if (str[i] == 'd')
-		return (print_d(va_arg(args, int)));
-	else if (str[i] == 'i')
-		return (print_d(va_arg(args, int)));
-	else if (str[i] == 'u')
-		return (print_u(va_arg(args, unsigned int)));
-	else if (str[i] == 'x')
-		return (print_low(va_arg(args, int)));
-	else if (str[i] == 'X')
-		return (print_up(va_arg(args, int)));
-	else if (str[i] == '%')
+	if (str == 'c')
+		return (print_c(va_arg(*args, int)));
+	else if (str == 's')
+		return (print_s(va_arg(*args, char *)));
+	else if (str == 'p')
+		return (print_p((unsigned long)va_arg(*args, void *)));
+	else if (str == 'd')
+		return (print_d(va_arg(*args, int)));
+	else if (str == 'i')
+		return (print_d(va_arg(*args, int)));
+	else if (str == 'u')
+		return (print_u(va_arg(*args, unsigned int)));
+	else if (str == 'x')
+		return (print_low((unsigned long)va_arg(*args, unsigned int)));
+	else if (str == 'X')
+		return (print_up((unsigned long)va_arg(*args, unsigned int)));
+	else if (str == '%')
 		return (print_c('%'));
+	return (0);
 }
 
 int	ft_printf(const char *str, ...)
 {
 	va_list	args;
-	int		i;
 	int		count;
 
-	count = 0;
-	i = 0;
 	va_start(args, str);
-	if (!str)
-		return (0);
-	while (str[i])
+	count = 0;
+	while (*str)
 	{
-		if (str[i] == '%')
+		if (*str == '%')
 		{
-			i++;
-			count += check_format(args, str, i);
+			str++;
+			if (*str == '\0')
+				break ;
+			count += check_format(&args, *str);
 		}
 		else
 		{
-			ft_putchar(str[i]);
+			ft_putchar(*str);
 			count++;
 		}
-		i++;
+		str++;
 	}
 	va_end(args);
 	return (count);
 }
 
-/*va_list	args;
-
-va_start(args, format);
-va_arg(args, int);
-va_end(args);*/
+/* int	main()
+{
+	ft_printf("%p", 15);
+	printf("\n%p", "15");
+} */

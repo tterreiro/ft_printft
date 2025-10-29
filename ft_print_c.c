@@ -6,7 +6,7 @@
 /*   By: hde-andr <hde-andr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 19:52:06 by hde-andr          #+#    #+#             */
-/*   Updated: 2025/10/28 10:29:03 by hde-andr         ###   ########.fr       */
+/*   Updated: 2025/10/29 17:37:20 by hde-andr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	print_c(int arg)
 {
-	ft_putchar((char)arg);
+	write(1, &arg, 1);
 	return (1);
 }

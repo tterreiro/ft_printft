@@ -6,7 +6,7 @@
 /*   By: hde-andr <hde-andr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 21:12:02 by hde-andr          #+#    #+#             */
-/*   Updated: 2025/10/28 18:44:47 by hde-andr         ###   ########.fr       */
+/*   Updated: 2025/10/29 18:27:02 by hde-andr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	print_d(int arg)
 	}
 	if (nbr < 10)
 	{
-		ft_putchar(arg + '0');
-		return (1);
+		ft_putchar(nbr + '0');
+		return (count + 1);
 	}
 	count += print_d(nbr / 10) + 1;
 	ft_putchar(nbr % 10 + '0');
