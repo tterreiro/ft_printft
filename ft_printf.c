@@ -6,7 +6,7 @@
 /*   By: hde-andr <hde-andr@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:40:20 by hde-andr          #+#    #+#             */
-/*   Updated: 2025/10/29 18:32:36 by hde-andr         ###   ########.fr       */
+/*   Updated: 2025/10/30 11:56:30 by hde-andr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,6 @@ int	ft_printf(const char *str, ...)
 
 /* int	main()
 {
-	ft_printf("%p", 15);
-	printf("\n%p", "15");
+	ft_printf("%p %p", 0, 0);
+	printf("\n%p %p", 0, 0);
 } */
