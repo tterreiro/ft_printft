@@ -25,22 +25,18 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-makelibft:
+$(NAME): $(OBJS)
 	@make -C $(LIBFTDIR)
-	@cp $(LIBFTDIR)/$(LIBFTNAME) .
-	@mv $(LIBFTNAME) $(NAME)
-
-
-$(NAME): makelibft $(OBJS)
+	@cp $(LIBFTDIR)/$(LIBFTNAME) $(NAME)
 	ar rc $(NAME) $(OBJS)
 
 clean:
 	rm -f $(OBJS)
-	@cd $(LIBFTDIR) && make clean
+	@make clean -C $(LIBFTDIR)
 
 fclean: clean
 	rm -f $(NAME)
-	@cd $(LIBFTDIR) && make fclean
+	@make fclean -C $(LIBFTDIR)
 
 re: fclean all
 
